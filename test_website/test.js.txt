@@ -1,0 +1,15 @@
+function updateTime() {
+  const date = new Date();
+  const options = {
+    timeZone: 'Asia/Tokyo',
+    hour12: false,
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  };
+  const tokyoTime = date.toLocaleString('en-US', options);
+  const localTime = date.toLocaleTimeString('en-US', { hour12: false });
+  document.getElementById('clock').innerHTML = `Local Time: ${localTime} | Tokyo Time: ${tokyoTime}`;
+}
+
+setInterval(updateTime, 1000);
